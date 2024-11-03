@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portofolio</title>
+    <link href="./output.css" rel="stylesheet" />
+    <style>
+      #toggle:checked + label div.toggle-inner {
+        transform: translateX(0.8rem);
+      }
+      #toggle-mobile:checked + label div.toggle-inner {
+        transform: translateX(0.8rem);
+      }
+
+      .bar-menu {
+        cursor: pointer;
+      }
+
+      #menu-dropdown {
+        display: none;
+      }
+
+      #menu-dropdown.active {
+        display: block;
+      }
+      .icon {
+        transition: transform 0.3s ease, fill 0.3s ease;
+        transition: filter 0.3s ease;
+      }
+
+      .icon:hover {
+        filter: invert(35%) sepia(78%) saturate(3498%) hue-rotate(327deg) brightness(96%) contrast(102%);
+        transform: scale(1.2);
+      }
+      .img {
+        width: 300px;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/typewriter-effect@latest/dist/core.js"></script>
+  </head>
+  <body class="bg-red-200 text-black dark:bg-slate-900 dark:text-white">
+    <nav class="bg-white fixed w-full z-10 top-0 left-0">
+      <div class="flex items-center justify-between">
+        <div class="flex-shrink-0">
+          <div class="text-black font-bold text-xl m-5 flex px-10 dark:text-white">Keisha</div>
+        </div>
+        <div class="hidden md:block">
+          <div class="ml-10 flex items-baseline space-x-4 px-14 relative">
+            <a class="rounded-md hover:bg-red-200 px-3 py-2 text-slate-900 font-bold " href="#home">Beranda</a>
+            <a class="rounded-md hover:bg-red-200 px-3 py-2 text-slate-900 font-bold " href="#about">Tentang</a>
+            <a class="rounded-md hover:bg-red-200 px-3 py-2 text-slate-900 font-bold " href="#skill">Skill</a>
+            <a class="rounded-md hover:bg-red-200 px-3 py-2 text-slate-900 font-bold " href="#project">Proyek</a>
+            <a class="rounded-md hover:bg-red-200 px-3 py-2 text-slate-900 font-bold " href="#contact">Kontak</a>
+          </div>
+        </div>
+
+        <div id="mobile-menu" class="md:hidden flex items-center px-10">
+          <div
+            class="bar-menu relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-red-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-red-800"
+            onclick="toggleMenu()"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div id="menu-dropdown" class="hidden">
+        <ul class="text-md ml-auto">
+          <li class="m-3">
+            <a class="rounded-md hover:bg-gray-700 px-3 py-2 text-blue-950 dark:text-orange-600 font-bold hover:text-white" href="#home">Beranda</a>
+          </li>
+          <li class="m-3">
+            <a class="rounded-md hover:bg-gray-700 px-3 py-2 text-blue-950 dark:text-orange-600 font-bold hover:text-white" href="#about">Tentang</a>
+          </li>
+          <li class="m-3">
+            <a class="rounded-md hover:bg-gray-700 px-3 py-2 text-blue-950 dark:text-orange-600 font-bold hover:text-white" href="#skill">Skill</a>
+          </li>
+          <li class="m-3">
+            <a class="rounded-md hover:bg-gray-700 px-3 py-2 text-blue-950 dark:text-orange-600 font-bold hover:text-white" href="#project">Proyek</a>
+          </li>
+          <li class="m-3">
+            <a class="rounded-md hover:bg-gray-700 px-3 py-2 text-blue-950 dark:text-orange-600 font-bold hover:text-white" href="#contact">Kontak</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <section id="home" class=" h-screen flex flex-col justify-center items-center text-bold  text-black dark:bg-slate-900 dark:text-white">
+      <div class="hidden md:flex">
+        <div class="grid grid-col-2 gap-4 text-left">
+            <div class="flex flex-col text-left">
+                <h1 class="text-5xl mt-32 mr-8 font-bold">Halo, saya <span class="">Keisha</span></h1>
+                <div id="app-mobile" class="text-xl font-bold"></div>
+                <div class="button my-2 items-center justify-center gap-8">
+                  <a class="rounded-md text-blackbal text-center py-2 px-5 shadow-lg shadow-red-400 bg-white hover:bg-red-300 hover:text-whitecursor-pointer" href="img/cv keisha.pdf"
+                    >lihat cv</a
+                  >
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-col">
+          <img src="img/keisha.jpg" alt="" class="img bg-slate-600 rounded-full transition-all duration-300 cursor-pointer " />
+        </div>
+      </div>
+      <div class="md:hidden">
+        <div class="flex flex-col">
+          <img src="img/keisha.jpg" alt="" class="img bg-slate-600 rounded-full transition-all duration-300 cursor-pointer " />
+        </div>
+        <div class="flex flex-col text-left">
+          <h1 class="text-5xl mt-4 font-bold">Halo, saya <span class="text-orange-600">Keisha</span></h1>
+          <div id="app-mobile" class="text-xl font-bold"></div>
+          <div class="button my-2 items-center justify-center gap-8">
+            <a class="rounded-md text-blackbal text-center py-2 px-5 shadow-lg shadow-red-400 bg-white hover:bg-red-300 hover:text-whitecursor-pointer" href="img/cv keisha.pdf"
+              >lihat cv</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="flex flex-col justify-center p-5 items-center text-center bg-red-100  text-black ">
+      <h1 class="text-5xl font-bold">Tentang saya</h1>
+      <div class="grid grid-cols-1 md:grid-cols-2 m-5 items-center">
+        <div class="items-center">
+          <img class="img rounded-md items-center bg-slate-600 transition-all duration-300 cursor-pointer " src="img/keisha.jpg" alt="" />
+        </div>
+        <div class="text-left w-96">
+          <h3 class="text-xl font-bold mt-2">Saya Web Developer</h3>
+          <hr class="mt-3 mb-3" />
+          <p>Mahasiswi yang termotivasi dan
+            ambisius yang sedang menempuh gelar
+            di bidang Manajemen Informatika
+            dengan dasar yang kuat dalam
+            Pengembangan Web. Bersemangat
+            untuk menerapkan pengetahuan dari
+            kelas ke pengalaman nyata dan
+            mengembangkan keterampilan
+            profesional di bidang
+            Media/Pengembangan Web. Dikenal
+            karena kemampuan pemecahan
+            masalah yang kuat, kerja sama tim, dan
+            sikap proaktif.</p>
+        </div>
+      </div>
+    </section>
+    <section id="skill" class="flex flex-col justify-center h-screen items-center text-center bg-red-200 text-black ">
+      <h1 class="text-5xl font-bold">Skill</h1>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 sm:grid-cols-3 bg-white rounded-md my-10">
+        <div class="m-5">
+          <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48">
+            <path fill="#E65100" d="M41,5H7l3,34l14,4l14-4L41,5L41,5z"></path>
+            <path fill="#FF6D00" d="M24 8L24 39.9 35.2 36.7 37.7 8z"></path>
+            <path fill="#FFF" d="M24,25v-4h8.6l-0.7,11.5L24,35.1v-4.2l4.1-1.4l0.3-4.5H24z M32.9,17l0.3-4H24v4H32.9z"></path>
+            <path fill="#EEE" d="M24,30.9v4.2l-7.9-2.6L15.7,27h4l0.2,2.5L24,30.9z M19.1,17H24v-4h-9.1l0.7,12H24v-4h-4.6L19.1,17z"></path>
+          </svg>
+        </div>
+
+        <div class="m-5">
+          <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48">
+            <path fill="#0277BD" d="M41,5H7l3,34l14,4l14-4L41,5L41,5z"></path>
+            <path fill="#039BE5" d="M24 8L24 39.9 35.2 36.7 37.7 8z"></path>
+            <path fill="#FFF" d="M33.1 13L24 13 24 17 28.9 17 28.6 21 24 21 24 25 28.4 25 28.1 29.5 24 30.9 24 35.1 31.9 32.5 32.6 21 32.6 21z"></path>
+            <path fill="#EEE" d="M24,13v4h-8.9l-0.3-4H24z M19.4,21l0.2,4H24v-4H19.4z M19.8,27h-4l0.3,5.5l7.9,2.6v-4.2l-4.1-1.4L19.8,27z"></path>
+          </svg>
+        </div>
+        <div class="m-5">
+          <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 80 80">
+            <path fill="#dcd5f2" d="M40,61.5C18.22,61.5,0.5,51.855,0.5,40S18.22,18.5,40,18.5S79.5,28.145,79.5,40S61.78,61.5,40,61.5z"></path>
+            <path fill="#8b75a1" d="M40,19c21.505,0,39,9.421,39,21S61.505,61,40,61S1,51.579,1,40S18.495,19,40,19 M40,18 C17.909,18,0,27.85,0,40s17.909,22,40,22s40-9.85,40-22S62.091,18,40,18L40,18z"></path>
+            <path
+              fill="#36404d"
+              d="M25.112 34c1.725 0 3.214.622 4.084 1.706.749.934.981 2.171.668 3.577C29.023 43.074 27.395 44 21.57 44h-4.14l1.75-10H25.112M25.112 32H17.5L14 52h2l1.056-6h4.515c5.863 0 9.053-.905 10.246-6.284C32.842 35.096 29.436 32 25.112 32L25.112 32zM61.112 34c1.725 0 3.214.622 4.084 1.706.749.934.981 2.171.668 3.577C65.023 43.074 63.395 44 57.57 44h-4.14l1.75-10H61.112M61.112 32H53.5L50 52h2l1.056-6h4.515c5.863 0 9.053-.905 10.246-6.284C68.842 35.096 65.436 32 61.112 32L61.112 32z"
+            ></path>
+            <g>
+              <path
+                fill="#36404d"
+                d="M49.072,33.212C48.193,32.348,46.644,32,44.334,32h-5.538L40,26h-2.1L34,46h1.99l2.388-12h0.419 h5.538c2.338,0,3.094,0.4,3.335,0.637c0.343,0.338,0.424,1.226,0.217,2.363l-1.767,9h2.106l1.626-8.63 C50.199,35.462,49.936,34.062,49.072,33.212z"
+              ></path>
+            </g>
+          </svg>
+        </div>
+
+        <div class="m-5">
+          <img src="img/Bootstrap_logo.svg" alt="" width="100px" height="100px" />
+        </div>
+        <div class="m-5">
+          <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+          <dotlottie-player src="https://lottie.host/11d80993-734a-48b9-b341-7c768f152934/S5ubAKDs4e.json" background="transparent" speed="1" style="width: 100px; height: 100px" direction="1" playMode="normal"></dotlottie-player>
+        </div>
+      </div>
+    </section>
+    <section id="project" class="flex flex-col justify-center items-center text-black text-center bg-red-100  h-screen">
+      <h1 class="text-5xl font-bold">Proyek</h1>
+      <div class="text-center text-xl m-10 text-gray-400">Belum ada Proyek disini</div>
+    </section>
+    <footer id="contact" class="text-gray-200 py-6 flex bg-red-600">
+      <div class="container">
+        <div class="">
+          <div class="flex items-baseline space-x-4">
+            <div class="rounded-md px-3 py-2 text-sm font-medium text-gray-300">
+              <h5 class="text-xl font-bold mb-4 text-white">Tautan Cepat</h5>
+              <ul class="text-md">
+                <li>
+                  <a href="#home">Beranda</a>
+                </li>
+                <li>
+                  <a href="#about">Tentang saya</a>
+                </li>
+                <li>
+                  <a href="#project">Proyek</a>
+                </li>
+                <li>
+                  <a href="#contact">Kontak</a>
+                </li>
+              </ul>
+            </div>
+            <div class="block rounded-md px-3 py-2 text-base font-medium text-gray-300">
+              <h5 class="text-xl font-bold mb-4 text-white">Kontak Saya</h5>
+              <ul class="flex">
+                <a href="#">
+                  <li class="m-3">
+                    <img src="svg/whatsapp-svgrepo-com.svg" alt="whatsapp" class="icon" />
+                  </li>
+                </a>
+                <a href="#">
+                  <li class="m-3">
+                    <img src="svg/linkedin-svgrepo-com.svg" alt="linkedin" class="icon" />
+                  </li>
+                </a>
+                <a href="#">
+                  <li class="m-3">
+                    <img src="svg/email-8-svgrepo-com.svg" alt="email" class="icon" />
+                  </li>
+                </a>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="mt-6 border-t border-red-700 pt-4 w-full text-center">
+          <p class="text-white">&copy; 2024 Keisha. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <script>
+      const checkbox = document.getElementById("toggle");
+      const checkbox1 = document.getElementById("toggle-mobile");
+
+      const html = document.querySelector("html");
+      checkbox.addEventListener("change", function () {
+        checkbox.checked ? html.classList.add("dark") : html.classList.remove("dark");
+      });
+      checkbox1.addEventListener("change", function () {
+        checkbox1.checked ? html.classList.add("dark") : html.classList.remove("dark");
+      });
+      // typewrite
+      var app = document.getElementById("app");
+      var appMobile = document.getElementById("app-mobile");
+
+      var typewriter = new Typewriter(app, {
+        loop: true,
+      });
+
+      typewriter.typeString("Web developer").pauseFor(2500).deleteAll().start();
+
+      var typewriterMobile = new Typewriter(appMobile, {
+        loop: true,
+      });
+
+      typewriterMobile.typeString("Web developer").pauseFor(2500).deleteAll().start();
+      //bar menu
+      function toggleMenu() {
+        const menuDropdown = document.getElementById("menu-dropdown");
+        menuDropdown.classList.toggle("active");
+      }
+      //scroll animation
+      function scrollToSection(id) {
+        const element = document.getElementById(id);
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+
+      const navbarLinks = document.querySelectorAll("nav a");
+      const footerLinks = document.querySelectorAll("footer a");
+      const allLinks = [...navbarLinks, ...footerLinks];
+
+      allLinks.forEach((link) => {
+        link.addEventListener("click", (event) => {
+          event.preventDefault();
+          const targetId = link.getAttribute("href").substring(1);
+          scrollToSection(targetId);
+        });
+      });
+    </script>
+  </body>
+</html>
