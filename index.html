@@ -249,27 +249,10 @@
       const checkbox = document.getElementById("toggle");
       const checkbox1 = document.getElementById("toggle-mobile");
 
-      const html = document.querySelector("html");
-      checkbox.addEventListener("change", function () {
-        checkbox.checked ? html.classList.add("dark") : html.classList.remove("dark");
-      });
       checkbox1.addEventListener("change", function () {
         checkbox1.checked ? html.classList.add("dark") : html.classList.remove("dark");
       });
-      // typewrite
-      var app = document.getElementById("app");
-      var appMobile = document.getElementById("app-mobile");
-
-      var typewriter = new Typewriter(app, {
-        loop: true,
-      });
-
-      typewriter.typeString("Web developer").pauseFor(2500).deleteAll().start();
-
-      var typewriterMobile = new Typewriter(appMobile, {
-        loop: true,
-      });
-
+      
       typewriterMobile.typeString("Web developer").pauseFor(2500).deleteAll().start();
       //bar menu
       function toggleMenu() {
